@@ -1,0 +1,50 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html class="no-js" dir="{% if LANGUAGE_BIDI %}rtl{% else %}ltr{% endif %}"
+      lang="{% firstof LANGUAGE_CODE 'en-us' %}">
+  <head>
+    <title>{% block title %}{% endblock %}</title>
+    {% block meta %}
+    {% endblock meta %}
+    {% block link %}
+    <link rel="stylesheet" href="/cssghg/jquery.mobile.min.css" />
+    {% endblock link %}
+    {% block script %}
+    <script src="/jsghg/jquery-1.11.2.min.js"></script>
+    <script src="/jsghg/jquery-1.11.2.min.map"></script>
+    <script src="/jsghg/jquery.mobile.min.js"></script>
+    <script src="/jsghg/jquery.mobile-1.4.4.min.map"></script>
+    <!--[if lt IE 9]><script type="text/javascript" src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    {% endblock script %}
+    {% block css %}
+      {% load pipeline %}
+      {% stylesheet 'danucss' %}
+    {% endblock %}
+    {% block extra-head %}{% endblock %}
+  </head>
+
+  <body>
+    <div data-role="page" style="background:#ffffff" data-quicklinks="true">
+       <div role="main" class="dg-content dg-fullwidth">
+         {% if device_info.width < 800 %}
+           {% include "header-panel.html" %}
+         {% elif device_info.width > 1600 %}
+           {% include "header-alt.html" %}
+         {% else %}
+           {% include "header.html" %}
+         {% endif %}
+         {% block content %}{% endblock %}
+         {% if device_info.width > 1600 %}
+           {% include "footer-alt.html" %}
+         {% else %}
+           {% include "footer.html" %}
+         {% endif %}
+       </div>
+       {% block js %}
+         {% load pipeline %}
+         {% javascript 'danujs' %}
+       {% endblock %}
+    </div>
+  </body>
+</html>

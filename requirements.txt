@@ -1,0 +1,9 @@
+django<1.6
+django-blog-zinnia==0.13
+django-appengine-toolkit
+django-pipeline
+python-social-auth
+django-disqus
+cssmin
+slimit
+pillow

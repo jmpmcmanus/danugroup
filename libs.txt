@@ -1,0 +1,11 @@
+appengine_toolkit
+bs4
+cloudstorage
+disqus
+django_xmlrpc
+mptt
+PIL
+pipeline
+pyparsing.py
+pytz
+tagging

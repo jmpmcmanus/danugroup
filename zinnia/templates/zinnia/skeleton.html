@@ -1,0 +1,66 @@
+{% load i18n staticfiles %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xml:lang="{{ LANGUAGE_CODE }}" lang="{{ LANGUAGE_CODE }}" version="-//W3C//DTD XHTML 1.1//EN" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>DanuGroup's Blog - {% block title %}{% endblock title %}{% block title-page %}{% endblock title-page %}</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="cache-control" content="public, max-age=86400" />
+    <meta name="robots" content="follow, all" />
+    <meta name="language" content="{{ LANGUAGE_CODE }}" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="{% block meta-description %}{% trans "DanuGroup blog." %}{% endblock meta-description %}{% block meta-description-page %}{% endblock meta-description-page %}" />
+    <meta name="keywords" content="{% block meta-keywords %}django, blog, weblog, zinnia{% endblock meta-keywords %}" />
+    <meta name="author" content="Fantomas42" />
+    {% block meta %}{% endblock meta %}
+    <link rel="pingback" href="/xmlrpc/" />
+    <link rel="home" href="{% url 'zinnia_entry_archive_index' %}" />
+    <link rel="stylesheet" type="text/css" media="screen, projection" href="{% static "zinnia/css/zinnia.css" %}" />
+    <link rel="stylesheet" href="/cssghg/jquery.mobile.min.css" />
+    <script src="/jsghg/jquery-1.11.2.min.js"></script>
+    <script src="/jsghg/jquery-1.11.2.min.map"></script>
+    <script src="/jsghg/jquery.mobile.min.js"></script>
+    <script src="/jsghg/jquery.mobile-1.4.4.min.map"></script>
+    <!--[if lt IE 8]>
+        <link rel="stylesheet" type="text/css" media="screen, projection" href="{% static "zinnia/css/ie.css" %}" />
+    <![endif]-->
+    {% block link %}{% endblock link %}
+    {% block css %}
+      {% load pipeline %}
+      {% stylesheet 'danucss' %}
+    {% endblock %}
+    {% block script %}{% endblock script %}
+  </head>
+  <body class="zinnia {% block theme-class %}danugroup{% endblock theme-class %} {% block color-class %}danu{% endblock color-class %} {% block sidebar-class %}right-sidebar{% endblock sidebar-class %} {% block body-class %}{% endblock body-class %}">
+    <div class="container">
+      {% if device_info.width < 800 %}
+        {% include "header-panel.html" %}
+      {% elif device_info.width > 1600 %}
+        {% include "header-alt.html" %}
+      {% else %}
+        {% include "header.html" %}
+      {% endif %}
+      <br />
+      <div id="header">
+        <form method="get" action="{% url 'zinnia_entry_search' %}">
+          <p>
+            <input type="text" value="{% trans "Keywords..." %}" name="pattern" onfocus="this.value=''" />
+          </p>
+        </form>
+        {% block breadcrumbs %}{% endblock breadcrumbs %}
+      </div>
+      <div id="content" class="hfeed">
+        {% block content %}
+        {% endblock content %}
+      </div>
+      <div id="sidebar">
+        {% block sidebar %}
+        {% endblock sidebar %}
+      </div>
+        {% if device_info.width > 1600 %}
+          {% include "footer-alt.html" %}
+        {% else %}
+          {% include "footer.html" %}
+        {% endif %}
+      </div>
+  </body>
+</html>

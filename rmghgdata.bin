@@ -1,0 +1,4 @@
+rm -r static/cssghg
+rm -r static/emissions
+rm -r static/geo
+rm -r static/jsghg
