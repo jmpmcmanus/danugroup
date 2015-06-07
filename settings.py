@@ -195,7 +195,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.sites',
     'django.contrib.sitemaps',
-    #'robots',
+    'robots',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_xmlrpc',

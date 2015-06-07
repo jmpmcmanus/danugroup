@@ -1,4 +1,0 @@
-cp -r /home/jmcmanus/DanuGroup/EPA_Data/GHGRP/ghgdata/csslocal static/cssghg
-cp -r /home/jmcmanus/DanuGroup/EPA_Data/GHGRP/ghgdata/emissions static/emissions
-cp -r /home/jmcmanus/DanuGroup/EPA_Data/GHGRP/ghgdata/geo static/geo 
-cp -r /home/jmcmanus/DanuGroup/EPA_Data/GHGRP/ghgdata/jslocal  static/jsghg
