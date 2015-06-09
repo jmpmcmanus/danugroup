@@ -239,8 +239,6 @@ PIPELINE_CSS = {
                'css/dg-theme.css',
                'css/menu.css',
                'css/dg-style.css',
-               'css/refs.css',
-               'css/figs.css',
                'css/social.css',
                'css/news.css',
         ),
