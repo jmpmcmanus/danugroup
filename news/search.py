@@ -48,7 +48,7 @@ def perform_search(query_string, model, fields):
     # Ensure we're dealing with a queryset
     queryset = model
     if not isinstance(queryset, query.QuerySet):
-        queryset = model.objects.all()
+        queryset = model.objects.all().order_by('-date_added')
 
     if not query_string:
         return queryset

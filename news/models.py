@@ -6,7 +6,4 @@ class Feed(models.Model):
     url = models.CharField(max_length=500, blank=True)
     title = models.CharField(max_length=500, blank=True)
     date_added = models.DateTimeField()
-try:
-	admin.site.register(Feed)
-except admin.sites.AlreadyRegistered:
-	pass
+
