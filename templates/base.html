@@ -21,6 +21,8 @@
     <script src="/jsjquery/jquery-1.11.2.min.map"></script>
     <script src="/jsjquery/jquery.mobile-1.4.4.min.js"></script>
     <script src="/jsjquery/jquery.mobile-1.4.4.min.map"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="//platform.linkedin.com/in.js" type="text/javascript"> lang: en_US</script>
     <!--[if lt IE 9]><script type="text/javascript" src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
     {% endblock script %}
     {% block css %}
@@ -47,6 +49,7 @@
            {% include "footer.html" %}
          {% endif %}
        </div>
+       <div id="fb-root"></div>
        {% block js %}
          {% load pipeline %}
          {% javascript 'danujs' %}

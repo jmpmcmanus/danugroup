@@ -501,6 +501,36 @@ rates.
 </div>
 </div>
 </div><!-- /grid-a -->
+<div class="social-button-container" style="position: relative; z-index: 999;">
+  <div class="social-button">
+    <div class="fb-like" data-href="https://www.danugroup.org/investigations/ghgrp/" data-layout="button" data-action="like" data-show-faces="true" data-width="100" data-share="true"></div>
+  </div>
+  <div class="social-button">
+    <a class="twitter-share-button" href="https://twitter.com/intent/tweet" data-url="https://www.danugroup.org/investigations/ghgrp/" data-width="100" data-count="none"></a>
+  </div>
+  {% if device_info.width < 800 %}
+    </div>
+    <div class="social-button-container" style="position: relative; z-index: 999;">
+      <div class="social-button" style="margin-left: 20px;">
+        <script type="IN/Share" data-url="http://www.danugroup.org/investigations/ghgrp/"></script>
+      </div>
+      <div class="social-button">
+        <div class="g-plusone" data-size="medium" data-width="100" data-annotation="none"></div>
+      </div>
+      <div class="social-button">
+        <a href="//www.reddit.com/submit" onclick="window.location = '//www.reddit.com/submit?url=' + 'https://www.danugroup.org/investigations/ghgrp/'; return false"> <img src="//www.redditstatic.com/spreddit1.gif" alt="submit to reddit" border="0" /> </a>
+  {% else %}
+    <div class="social-button" style="margin-top: 20px;">
+      <script type="IN/Share" data-url="http://www.danugroup.org/investigations/ghgrp/"></script>
+    </div>
+    <div class="social-button" style="margin-top: 20px;">
+      <div class="g-plusone" data-size="medium" data-width="100" data-annotation="none"></div>
+    </div>
+    <div class="social-button" style="margin-top: 20px;">
+      <a href="//www.reddit.com/submit" onclick="window.location = '//www.reddit.com/submit?url=' + 'https://www.danugroup.org/investigations/ghgrp/'; return false"> <img src="//www.redditstatic.com/spreddit1.gif" alt="submit to reddit" border="0" /> </a>
+  {% endif %}
+  </div>
+</div>
 <hr />
 <div class="ui-body ui-body-a" style="border:none;">
 {% include "investigations/ghgrp/ghgrefs.html" %}

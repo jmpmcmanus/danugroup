@@ -21,6 +21,8 @@
     <script src="/jsjquery/jquery-1.11.2.min.map"></script>
     <script src="/jsjquery/jquery.mobile-1.4.4.min.js"></script>
     <script src="/jsjquery/jquery.mobile-1.4.4.min.map"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="//platform.linkedin.com/in.js" type="text/javascript"> lang: en_US</script>
     <!--[if lt IE 8]>
         <link rel="stylesheet" type="text/css" media="screen, projection" href="{% static "zinnia/css/ie.css" %}" />
     <![endif]-->
@@ -63,5 +65,9 @@
           {% include "footer.html" %}
         {% endif %}
       </div>
+      {% block js %}
+        {% load pipeline %}
+        {% javascript 'danujs' %}
+      {% endblock %}
   </body>
 </html>

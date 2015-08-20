@@ -228,6 +228,8 @@ PIPELINE_JS = {
         'source_filenames': (
                'js/css_browser_selector.js',
                'js/jquery.cycle2.js',
+               'js/facebook.js',
+               'js/tweet.js',
         ),
         'output_filename': 'js/danu.js',
     }

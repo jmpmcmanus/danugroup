@@ -36,7 +36,27 @@
 {% block entry-content %}
   {% include object.content_template with object_content=object.html_content %}
 {% endblock entry-content %}
-
+<div class="social-button-container" style="position: relative; z-index: 999;">
+  <div class="social-button">
+    <div class="fb-like" data-href="{{ entry.get_absolute_url }}" data-action="like" data-show-faces="true" data-width="100" data-share="true"></div>
+  </div>
+  <div class="social-button">
+    <a class="twitter-share-button" href="https://twitter.com/intent/tweet" data-url="{{ entry.get_absolute_url }}" data-width="100" data-count="none"></a>
+  </div>
+  {% if device_info.width < 800 %}
+    </div><br />
+    <div class="social-button-container" style="position: relative; z-index: 999;">
+  {% endif %}
+  <div class="social-button">
+    <script type="IN/Share" data-url="{{ entry.get_absolute_url }}"></script>
+  </div>
+  <div class="social-button">
+    <div class="g-plusone" data-size="medium" data-width="100" data-annotation="none"></div>
+  </div>
+  <div class="social-button">
+      <a href="//www.reddit.com/submit" onclick="window.location = '//www.reddit.com/submit?url=' + 'http://danugroup.org' + '{{ entry.get_absolute_url }}'; return false"> <img src="//www.redditstatic.com/spreddit1.gif" alt="submit to reddit" border="0" /> </a>
+  </div>
+</div>
 {% block entry-widgets %}
 <div class="entry-widgets">
   {% block entry-next-entry %}
@@ -85,7 +105,6 @@
   {% endblock entry-related-entries %}
 </div>
 {% endblock entry-widgets %}
-
 {% block entry-comments %}
 <div id="comments">
   <h3>{% trans "Comments" %}</h3>
