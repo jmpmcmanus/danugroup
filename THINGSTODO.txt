@@ -1,0 +1,2 @@
+Check "next" and "previous" links in search page. Make sure they are not white.
+Check page layout at full extent. Make sure header section does not streatch to far.
